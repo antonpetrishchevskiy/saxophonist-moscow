@@ -1,0 +1,207 @@
+
+    /* СБРОС СТИЛЕЙ И БАЗОВЫЕ НАСТРОЙКИ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.6;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
+
+/* КОНТЕЙНЕР ДЛЯ ВСЕГО КОНТЕНТА */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+/* ========== ХИДЕР ========== */
+header {
+    padding: 40px 0 30px 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #888;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: #1a1a1a;
+}
+
+nav ul li a.active {
+    color: #1a1a1a;
+    font-weight: 400;
+}
+
+/* ========== ОСНОВНОЙ КОНТЕНТ ========== */
+main {
+    padding: 70px 0 90px 0;
+}
+
+
+
+/* ЗАГОЛОВОК СТРАНИЦЫ - КРУПНЫЙ, КАК НА LRK TRIO */
+.page-title {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 50px;
+    color: #1a1a1a;
+    max-width: 80%;
+}
+
+/* ОСНОВНОЙ ТЕКСТ - ЛЕГКИЙ И ВОЗДУШНЫЙ */
+.content-text {
+    max-width: 700px;
+    margin-bottom: 60px;
+}
+
+.content-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* ЦИТАТА - КАК ПРО РЭНДИ БРЕКЕРА НА САЙТЕ */
+.quote-block {
+    margin: 60px 0 60px 0;
+    padding-left: 30px;
+    border-left: 2px solid #1a1a1a;
+    max-width: 650px;
+}
+
+.quote-block p {
+    font-size: 22px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.5;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+}
+
+.quote-author {
+    font-size: 16px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* СЕКЦИЯ С ДВУМЯ КОЛОНКАМИ (ДЛЯ ИНФЫ О МУЗЫКАНТАХ) */
+.two-columns {
+    display: flex;
+    gap: 80px;
+    margin-top: 70px;
+    border-top: 1px solid #eaeaea;
+    padding-top: 60px;
+}
+
+.column {
+    flex: 1;
+}
+
+.column h3 {
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.column p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+/* ========== ФУТЕР ========== */
+footer {
+    padding: 30px 0 50px 0;
+    border-top: 1px solid #eaeaea;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 25px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #aaa;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: #1a1a1a;
+}
+
+/* АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 25px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        gap: 25px;
+    }
+
+    .page-title {
+        font-size: 42px;
+        max-width: 100%;
+    }
+
+    .two-columns {
+        flex-direction: column;
+        gap: 40px;
+    }
+}

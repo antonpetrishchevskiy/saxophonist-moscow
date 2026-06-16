@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Группа Фильмы</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Группа Фильмы | Кавер-бэнд | Саундтреки</title>
+
+    <!-- Подключение шрифтов -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #F5F5F5;
+            overflow-x: hidden;
+        }
+
+        /* Анимации */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+            50% { text-shadow: 0 0 40px rgba(255, 215, 0, 0.6); }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            padding: 15px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+
+        .back-home {
+            color: #F5F5F5;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .back-home:hover {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: #FFD700;
+            transform: translateX(-3px);
+        }
+
+        /* Hero секция */
+        /* Hero секция */
+        .hero-films {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 60px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;  /* ← Эффект прозрачности фото */
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+         /*   background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(26, 26, 46, 0.3));*/
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            animation: fadeInUp 1s ease;
+            margin-top: 600px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-title {
+            font-size: 72px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFD700, #FF6B6B);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .hero-text {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        /* Секции */
+        .section {
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title span {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            border-radius: 3px;
+        }
+
+        /* Инфо блоки */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .info-icon {
+            font-size: 48px;
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+
+        /* Галерея */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(0deg, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Видео блок */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .video-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-info h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        /* Плейлист */
+        .playlist {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 107, 107, 0.1));
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .track-list {
+            list-style: none;
+        }
+
+        .track-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .track-item:hover {
+            padding-left: 15px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .track-name {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .track-number {
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        .play-icon {
+            color: #FFD700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Цены */
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            border-color: #FFD700;
+        }
+
+        .price-card.popular {
+            border-color: #FFD700;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: #FFD700;
+            color: #0a0a0a;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 48px;
+            font-weight: 800;
+            color: #FFD700;
+            margin: 20px 0;
+        }
+
+        .price span {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .price-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .price-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .order-btn {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            color: #0a0a0a;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .order-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Контакты */
+        .contacts-section {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(255, 107, 107, 0.05));
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .contact-item {
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-item i {
+            font-size: 48px;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        .contact-item a {
+            color: #F5F5F5;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #FFD700;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero-title {
+                font-size: 42px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Кнопка наверх */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="container header-container">
+        <a href="#" class="logo">🎬 ГРУППА ФИЛЬМЫ</a>
+        <a href="index.html" class="back-home">← На главную</a>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero-films">
+    <div class="hero-bg">
+        <img src="images/films_3.png" alt="Группа Фильмы фон">
+        <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content">
+        <h1 class="hero-title">🎬 ГРУППА ФИЛЬМЫ</h1>
+        <p class="hero-subtitle">Кавер-бэнд | Саундтреки | Живой звук</p>
+        <p class="hero-text">
+            Лучшие мелодии из кинофильмов, сериалов и видеоигр в живом исполнении.<br>
+            Создаём атмосферу настоящего кино на вашем мероприятии
+        </p>
+        <button class="order-btn" onclick="openOrderModal()">Заказать выступление →</button>
+    </div>
+</section>
+
+<!-- О нас -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">🎞️ <span>О нас</span></h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon">🎻</div>
+                <h3>Живой звук</h3>
+                <p>Полный состав музыкантов: вокал, саксофон, фортепиано, гитара, бас, ударные</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🎬</div>
+                <h3>Саундтреки</h3>
+                <p>Хиты из Гарри Поттера, Интерстеллара, Игры престолов, Титаника, Ла-Ла Ленд</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">⭐</div>
+                <h3>7 лет на сцене</h3>
+                <p>Более 350 выступлений: свадьбы, корпоративы, киновечера, частные мероприятия</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Фотогалерея -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">📸 <span>Фотогалерея</span></h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/Filmy.jpeg" alt="Концерт">
+                <div class="gallery-overlay">
+                    <p>Выступление на кинофестивале</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?w=600" alt="Скрипка">
+                <div class="gallery-overlay">
+                    <p>Студийная запись</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600" alt="Выступление">
+                <div class="gallery-overlay">
+                    <p>Свадебное выступление</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=600" alt="Оркестр">
+                <div class="gallery-overlay">
+                    <p>Корпоратив</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Видео -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">🎥 <span>Видео</span></h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=example1" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>Interstellar Main Theme - Live</h4>
+                    <p>Ханс Циммер | Киновечер, Москва</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=example2" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>Game of Thrones Medley</h4>
+                    <p>Трибьют саундтрекам</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=example3" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>La La Land - City of Stars</h4>
+                    <p>Джазовое исполнение</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Плейлист -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">🎵 <span>Наш репертуар</span></h2>
+        <div class="playlist">
+            <div class="track-list">
+                <div class="track-item">
+                    <div class="track-name">
+                        <span class="track-number">01</span>
+                        <span>Interstellar Main Theme</span>
+                    </div>
+                    <i class="fas fa-play play-icon"></i>
+                </div>
+                <div class="track-item">
+                    <div class="track-name">
+                        <span class="track-number">02</span>
+                        <span>Game of Thrones Main Title</span>
+                    </div>
+                    <i class="fas fa-play play-icon"></i>
+                </div>
+                <div class="track-item">
+                    <div class="track-name">
+                        <span class="track-number">03</span>
+                        <span>Пираты Карибского моря</span>
+                    </div>
+                    <i class="fas fa-play play-icon"></i>
+                </div>
+                <div class="track-item">
+                    <div class="track-name">
+                        <span class="track-number">04</span>
+                        <span>My Heart Will Go On (Titanic)</span>
+                    </div>
+                    <i class="fas fa-play play-icon"></i>
+                </div>
+                <div class="track-item">
+                    <div class="track-name">
+                        <span class="track-number">05</span>
+                        <span>City of Stars (La La Land)</span>
+                    </div>
+                    <i class="fas fa-play play-icon"></i>
+                </div>
+                <div class="track-item">
+                    <div class="track-name">
+                        <span class="track-number">06</span>
+                        <span>Гарри Поттер Hedwig's Theme</span>
+                    </div>
+                    <i class="fas fa-play play-icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Цены -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">💰 <span>Стоимость</span></h2>
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>Стандарт</h3>
+                <div class="price">50 000 ₽<span>/сет</span></div>
+                <ul class="price-features">
+                    <li>45 минут выступления</li>
+                    <li>Квартет (4 музыканта)</li>
+                    <li>8-10 саундтреков</li>
+                    <li>Звукорежиссёр</li>
+                </ul>
+                <button class="order-btn" onclick="openOrderModal()">Выбрать</button>
+            </div>
+            <div class="price-card popular">
+                <div class="popular-badge">Популярный</div>
+                <h3>Киновечер</h3>
+                <div class="price">85 000 ₽<span>/вечер</span></div>
+                <ul class="price-features">
+                    <li>90 минут выступления</li>
+                    <li>Квинтет (5 музыкантов)</li>
+                    <li>15-18 саундтреков</li>
+                    <li>Световое шоу</li>
+                    <li>Видеопроекция</li>
+                </ul>
+                <button class="order-btn" onclick="openOrderModal()">Выбрать</button>
+            </div>
+            <div class="price-card">
+                <h3>Премиум</h3>
+                <div class="price">150 000 ₽<span>/вечер</span></div>
+                <ul class="price-features">
+                    <li>До 2 часов выступления</li>
+                    <li>Камерный оркестр (8 чел)</li>
+                    <li>Индивидуальный репертуар</li>
+                    <li>Запись в студии бонусом</li>
+                    <li>Выезд по МО и области</li>
+                </ul>
+                <button class="order-btn" onclick="openOrderModal()">Выбрать</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Контакты -->
+<section class="section contacts-section">
+    <div class="container">
+        <h2 class="section-title">📞 <span>Связь с нами</span></h2>
+        <div class="contacts-grid">
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <h4>Телефон</h4>
+                <a href="tel:+79165558227">+7 (916) 555-82-27</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <h4>WhatsApp</h4>
+                <a href="https://wa.me/79165558227">Написать в WhatsApp</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-telegram"></i>
+                <h4>Telegram</h4>
+                <a href="https://t.me/jazzprisoners">@jazzprisoners</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <h4>Email</h4>
+                <a href="mailto:films@music.ru">films@music.ru</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 Группа Фильмы | Кавер-бэнд | Музыка из кино</p>
+    </div>
+</footer>
+
+<!-- Модалка заказа -->
+<div id="orderModal" class="order-modal">
+    <div class="order-modal-content">
+        <div class="order-modal-header">
+            <h3>🎬 Заказать выступление</h3>
+            <span class="order-modal-close">&times;</span>
+        </div>
+        <form id="orderForm">
+            <input type="text" id="userName" placeholder="Ваше имя" required>
+            <input type="email" id="userEmail" placeholder="Ваш email" required>
+            <input type="tel" id="userPhone" placeholder="Ваш телефон">
+            <textarea id="orderMessage" placeholder="Дата, место, формат мероприятия, ваши пожелания" rows="4" required></textarea>
+            <button type="submit" class="order-btn" style="width: 100%;">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+
+<button id="backToTop" class="back-to-top">↑</button>
+
+<style>
+    /* Модалка */
+    .order-modal {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.9);
+        backdrop-filter: blur(10px);
+    }
+
+    .order-modal-content {
+        background: linear-gradient(135deg, #1a1a2e, #0a0a0a);
+        margin: 10% auto;
+        padding: 30px;
+        width: 90%;
+        max-width: 500px;
+        border-radius: 20px;
+        border: 1px solid rgba(255,215,0,0.3);
+    }
+
+    .order-modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .order-modal-close {
+        font-size: 32px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .order-modal-close:hover {
+        color: #FFD700;
+        transform: scale(1.1);
+    }
+
+    .order-modal input,
+    .order-modal textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,215,0,0.3);
+        border-radius: 10px;
+        color: #fff;
+    }
+
+    .order-modal input:focus,
+    .order-modal textarea:focus {
+        outline: none;
+        border-color: #FFD700;
+    }
+</style>
+
+<script>
+    // Модалка
+    const modal = document.getElementById('orderModal');
+    const ctaButtons = document.querySelectorAll('.order-btn');
+    const closeBtn = document.querySelector('.order-modal-close');
+
+    function openOrderModal() {
+        modal.style.display = 'block';
+    }
+
+    ctaButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openOrderModal();
+        });
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    }
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Отправка формы
+    document.getElementById('orderForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('userName').value;
+        const email = document.getElementById('userEmail').value;
+        const phone = document.getElementById('userPhone').value;
+        const message = document.getElementById('orderMessage').value;
+
+        const subject = encodeURIComponent(`Заказ выступления Группа Фильмы от ${name}`);
+        const body = encodeURIComponent(`Имя: ${name}\nEmail: ${email}\nТелефон: ${phone || 'не указан'}\nСообщение: ${message}`);
+
+        window.location.href = `mailto:films@music.ru?subject=${subject}&body=${body}`;
+        alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+        modal.style.display = 'none';
+        document.getElementById('orderForm').reset();
+    });
+
+    // Кнопка наверх
+    const backBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backBtn.classList.add('show');
+        } else {
+            backBtn.classList.remove('show');
+        }
+    });
+    backBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Плейлист
+    document.querySelectorAll('.play-icon').forEach((icon, index) => {
+        icon.addEventListener('click', () => {
+            alert('🎵 Здесь будет демо-плеер саундтреков!');
+        });
+    });
+</script>
+
+</body>
+</html>
+
+
+
+</body>
+</html>
