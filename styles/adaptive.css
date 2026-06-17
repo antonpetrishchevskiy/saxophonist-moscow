@@ -1,3 +1,404 @@
+/* =================================================== */
+/* ===== АДАПТИВ ХЕДЕРА ДЛЯ ПЛАНШЕТОВ И МОБИЛЬНЫХ ===== */
+/* =================================================== */
+
+/* --- Планшеты и маленькие ноутбуки (до 1140px) --- */
+@media (max-width: 1140px) {
+    /* === ХЕДЕР === */
+    .header {
+        background: rgba(5, 0, 0, 0.06);
+    }
+    .header-container {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center;
+        padding: 0 16px;
+        width: 100%;
+
+    }
+
+    /* Прячем основную навигацию */
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(5, 0, 0, 0.41);
+        backdrop-filter: blur(20px);
+        padding: 20px 0;
+        border-top: 1px solid rgba(201, 169, 110, 0.15);
+        border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        z-index: 999;
+        animation: slideDown 0.3s cubic-bezier(0.2, 0.9, 0.4, 1);
+    }
+
+    /* Показываем навигацию при активном бургере */
+    .main-nav.active {
+        display: block;
+    }
+
+    /* Меню в мобильной версии — вертикальное */
+    .nav-menu {
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 12px 20px;
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .nav-menu li a::before {
+        display: none;
+    }
+
+    .nav-menu li a:hover {
+        background: rgba(255, 255, 255, 0.04);
+        transform: scale(1.02);
+    }
+
+    /* --- Пункт с телефоном в мобильном меню --- */
+    .phone-nav-item {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 0 0 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        margin-top: 4px;
+    }
+
+    .phone-nav-item .phone-link {
+        font-size: 14px;
+        padding: 12px 20px;
+        justify-content: center;
+        opacity: 1;
+        width: 100%;
+    }
+
+    .phone-nav-item .phone-link::after {
+        display: none;
+    }
+
+    .phone-nav-item .phone-link:hover {
+        transform: none;
+        background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* --- Контейнер с иконками и бургером --- */
+    .social-icons {
+        display: flex !important;
+        align-items: center;
+        gap: 1.2rem;  /* ← Расстояние между иконками */
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 8px;
+    }
+
+    /* Иконки соцсетей */
+    .social-icon {
+        width: 34px;
+        height: 34px;
+        padding: 0.3rem;
+        flex-shrink: 0;
+    }
+
+    .social-icon svg {
+        width: 28px;
+        height: 28px;
+        fill: rgb(5, 0, 0);     /* ← Цвет заливки */
+       /* stroke: #2f1349;   !* ← Цвет обводки *!*/
+    }
+
+    /* RuTube иконка в хедере на планшетах */
+    .header .social-icon[href*="rutube"] svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Скрываем номер телефона из соц-иконок (он уже в меню) */
+    .header .social-icons .phone-social {
+        display: none;
+    }
+
+    /* --- Бургер-кнопка --- */
+    .menu-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        color: #F5F5F5;
+        cursor: pointer;
+        padding: 6px 12px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        user-select: none;
+        line-height: 1;
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+        margin-left: auto; /* Прижимает бургер вправо */
+    }
+
+    .menu-toggle:hover {
+        background: rgba(255, 255, 255, 0.06);
+        transform: scale(1.05);
+    }
+
+    /* Логотип скрываем на мобильных */
+    .logo-icon {
+        display: none !important;
+    }
+
+    /* --- Дропдаун в мобильном меню --- */
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown .dropdown-toggle {
+        display: block;
+        width: 100%;
+        padding: 12px 20px !important;
+        pointer-events: none;
+    }
+
+    /* Стрелка-индикатор для мобильного дропдауна */
+    .dropdown .dropdown-toggle::after {
+        content: '▾';
+        display: inline-block;
+        margin-left: 8px;
+        font-size: 12px;
+        transition: transform 0.3s ease;
+        pointer-events: auto;
+    }
+
+    .dropdown.active .dropdown-toggle::after {
+        transform: rotate(180deg);
+    }
+
+    /* Мобильное выпадающее меню */
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        width: 100%;
+        min-width: 100%;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.2, 0.9, 0.4, 1), padding 0.3s ease;
+        backdrop-filter: none;
+        border-top: none;
+        transform-origin: top;
+        margin-top: 0;
+    }
+
+    .dropdown.active .dropdown-menu {
+        max-height: 500px;
+        padding: 0 0 8px 0;
+    }
+
+    .dropdown-item {
+        padding: 10px 20px 10px 32px;
+        opacity: 1;
+        transform: none;
+        border-left: none;
+        align-items: center;
+        transition: all 0.2s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .dropdown-item:hover {
+        border-left: none;
+        background: rgba(255, 255, 255, 0.05);
+        transform: none;
+        padding-left: 32px;
+    }
+
+    .dropdown-item .project-name {
+        font-size: 13px;
+        font-weight: 400;
+        white-space: normal;
+    }
+
+    .dropdown-item .project-desc {
+        font-size: 11px;
+        white-space: normal;
+        opacity: 0.5;
+    }
+
+    .dropdown-item:not(:last-child)::after {
+        display: none;
+    }
+
+    /* Отключаем мосты для мобильной версии */
+    .dropdown::after,
+    .dropdown::before {
+        display: none !important;
+    }
+
+    /* Анимация для пунктов меню при открытии */
+    .main-nav.active .nav-menu li {
+        animation: fadeInItem 0.3s ease forwards;
+        opacity: 0;
+    }
+
+    .main-nav.active .nav-menu li:nth-child(1) { animation-delay: 0.02s; }
+    .main-nav.active .nav-menu li:nth-child(2) { animation-delay: 0.04s; }
+    .main-nav.active .nav-menu li:nth-child(3) { animation-delay: 0.06s; }
+    .main-nav.active .nav-menu li:nth-child(4) { animation-delay: 0.08s; }
+    .main-nav.active .nav-menu li:nth-child(5) { animation-delay: 0.10s; }
+    .main-nav.active .nav-menu li:nth-child(6) { animation-delay: 0.12s; }
+    .main-nav.active .nav-menu li:nth-child(7) { animation-delay: 0.14s; }
+    .main-nav.active .nav-menu li:nth-child(8) { animation-delay: 0.16s; }
+    .main-nav.active .nav-menu li:nth-child(9) { animation-delay: 0.18s; }
+    .main-nav.active .nav-menu li:nth-child(10) { animation-delay: 0.20s; }
+}
+
+/* --- Анимации для мобильного меню --- */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px) scaleY(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+@keyframes fadeInItem {
+    0% {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 978px) {
+    .content-card {
+        margin-top: 450px;
+        max-width: 600px;
+    }
+    .hero-content  {
+        justify-content: center;
+    }
+    .slide {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+/* =================================================== */
+/* ===== МАЛЕНЬКИЕ ТЕЛЕФОНЫ (до 480px) ===== */
+/* =================================================== */
+
+@media (max-width: 876px) {
+    .slide {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    /* Фото на всю ширину карточки */
+    .advantage-card[data-bg-image] {
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        width: 100%;
+        background-position: center 30% !important;
+    }
+    .advantage-card:first-child[data-bg-image] {
+        background-position: center 5% !important;  /* ← Сдвигаем первое фото вниз */
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    /* Иконки соцсетей */
+    .social-icon {
+        width: 30px;
+        height: 30px;
+        padding: 0.2rem;
+    }
+
+    .social-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .header .social-icon[href*="rutube"] svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Бургер */
+    .menu-toggle {
+        width: 38px;
+        height: 38px;
+        font-size: 24px;
+    }
+
+    /* Хедер */
+    .header {
+        padding: 12px 0;
+        min-height: 70px;
+    }
+
+    .header-container {
+        padding: 0 10px;
+    }
+
+    .social-icons {
+        gap: 0.8rem;  /* ← Меньше расстояние на телефонах */
+        padding: 0 4px;
+    }
+
+    /* Меню */
+    .nav-menu li a {
+        font-size: 12px;
+        padding: 10px 16px;
+    }
+
+    .phone-nav-item .phone-link {
+        font-size: 12px;
+        padding: 10px 16px;
+    }
+
+    /* Дропдаун */
+    .dropdown-item {
+        padding: 8px 16px 8px 24px;
+    }
+
+    .dropdown-item .project-name {
+        font-size: 12px;
+    }
+
+    .dropdown-item .project-desc {
+        font-size: 10px;
+    }
+}
+
 @media (max-width: 1610px) {
     .main-block__images {
         right: 110px;
@@ -50,9 +451,9 @@
     .header-content {
         display: none;
     }
-    .header-container {
+    /*.header-container {
         padding-bottom: 30px;
-    }
+    }*/
     .main-block {
         flex-direction: column;
         justify-content: center;
