@@ -721,7 +721,7 @@ body {
     min-height: 100vh;           /* На всю высоту экрана */
     width: 100%;
     overflow: hidden;
-    background-image: url("/images/main_background.jpg");
+    background-image: url("../images/main_background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 60% 35%;
@@ -1211,7 +1211,7 @@ body {
 /* Секция преимуществ */
 .advantages {
     padding: 80px 0;
-    background: url(/images/background_2.jpg) center/cover fixed no-repeat;
+    background: url(../images/background_2.jpg) center/cover fixed no-repeat;
     /* fixed создаёт параллакс при скролле */
     background-blend-mode: overlay;
     backdrop-filter: blur(10px);
