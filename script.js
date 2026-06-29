@@ -607,6 +607,38 @@ document.addEventListener('DOMContentLoaded', function() {
             form.reset();
         });
     }
+// Бургер-меню
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
 
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                mainNav.classList.toggle('active');
+                // Меняем текст бургера на крестик
+                menuToggle.textContent = mainNav.classList.contains('active') ? '✕' : '☰';
+            });
+
+            // Закрываем меню при клике вне его
+            document.addEventListener('click', function(e) {
+                if (!mainNav.contains(e.target) && !menuToggle.contains(e.target)) {
+                    mainNav.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                }
+            });
+        }
+
+        // Мобильный дропдаун
+        document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            if (toggle) {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                });
+            }
+        });
+    });
 
 });
