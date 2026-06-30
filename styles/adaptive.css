@@ -1333,10 +1333,6 @@
             flex-wrap: nowrap;
         }
 
-        .footer-logo {
-            margin-right: 20px;
-        }
-
         .footer-block > :first-child {
             justify-content: space-between;
         }
