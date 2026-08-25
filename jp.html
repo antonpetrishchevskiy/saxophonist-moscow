@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Jazz Prisoners</title>
+
+    <link rel="stylesheet" href="styles/jazz_prisoners.css"/>
+    <link rel="stylesheet" href="styles/animate.min.css">
+    <link rel="stylesheet" href="styles/jp-adaptive.css"/>
+    <link rel="stylesheet" href="styles/gallery.css"/>
+</head>
+<body>
+
+<!-- ==============================
+ХЕДЕР (белый фон)
+============================== -->
+<header class="header">
+    <div class="header-content">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/jazz_prisoners_logo_2.png" alt="Jazz Prisoners" class="logo-img"/>
+            </a>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="jp.html" class="active">Jazz Prisoners</a></li>
+                <li><a href="hit.html">Группа ХИТ</a></li>
+                <li><a href="films.html">Группа Фильмы</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+</header>
+
+<!-- ==============================
+FULLSCREEN МЕНЮ
+============================== -->
+<div class="fullscreen-overlay" id="fullscreenOverlay">
+    <nav class="overlay-nav">
+        <ul>
+            <li><a href="#about">О группе</a></li>
+            <li><a href="#review">Отзыв</a></li>
+            <li><a href="#members">Состав</a></li>
+            <li><a href="#discography">Дискография</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- ==============================
+ОСНОВНОЙ КОНТЕНТ
+============================== -->
+<main>
+    <div class="container">
+
+        <!-- ЗАГОЛОВОК -->
+        <h1 class="page-title animate__animated animate__fadeIn animate__slower 12s">Jazz Prisoners</h1>
+
+        <!-- О ГРУППЕ -->
+        <section id="about" class="content-text">
+            <p>Идеология ансамбля «The Jazz Prisoners» основывается на любви к мейнстриму, центральному и наиболее
+                сбалансированному направлению в джазе. Этот стиль, как магнит, притягивает всё самое интересное и
+                современное, отражая дух времени и тенденции в развитии джаза. Впечатления от американского опыта
+                позволили Антону создать коллектив, который отличается прогрессивным звучанием, живостью и
+                энергичностью. Это ансамбль индивидуальностей, объединённых общей любовью к джазу и стремлением к
+                новаторству. В разные годы в состав группы входили ведущие музыканты Москвы, что делает каждый концерт
+                уникальным и насыщенным.</p>
+            <p>Создатель группы Антон Петрищевский — композитор, аранжировщик, преподаватель Московского Губернского
+                колледжа искусств. Уроженец Владивостока, выпускник Российской академии музыки им. Гнесиных, где его
+                преподавателем был знаменитый Александр Осейчук, а в Музыкальном колледже Беркли (США, Boston), такие
+                именитые саксофонисты, как Greg Osby, George Garzone, Jerry Bergonzi, Shannon LeClare, Jim Odgren.
+                Антон — лауреат региональных и международных джазовых
+                конкурсов, стипендиат программы «Новые имена». В годы обучения в Америке он неоднократно выступал с
+                заметными лидерами и коллективами актуального современного джаза, среди которых Грег Осби, Дэйв Сэмюэлс,
+                Даррен Барретт, биг-бэнд Грега Хопкинса, Organically Grown Big Band.</p>
+            <p>Начиная с 2013–2025 годах проект вошёл в число самых ярких джазовых групп: выступления в
+                ведущих джазовых клубах Москвы.</p>
+        </section>
+
+        <!-- ============================================
+      АВТОМАТИЧЕСКИЙ СЛАЙДЕР НА ВСЮ ШИРИНУ
+      ============================================ -->
+        <section class="fullwidth-slider" id="mainSlider">
+            <div class="slider-track" id="sliderTrack">
+
+                <div class="slide-item">
+                    <img src="images/jp_jam_club.webp" alt="Jazz Prisoners 1" class="pos-1"/>
+                </div>
+
+                <div class="slide-item">
+                    <img src="images/jp_butman_club.webp" alt="Jazz Prisoners 2" class="pos-2"/>
+                </div>
+
+                <div class="slide-item">
+                    <img src="images/JP_3.jpg" alt="Jazz Prisoners 3" class="pos-3"/>
+                </div>
+
+                <div class="slide-item">
+                    <img src="images/footer_background.webp" alt="Jazz Prisoners 4" class="pos-4"/>
+                </div>
+
+                <div class="slide-item">
+                    <img src="images/JP-cdri.webp" alt="Jazz Prisoners 5" class="pos-5"/>
+                </div>
+
+                <div class="slide-item">
+                    <img src="images/gallery/photo1.jpg" alt="Jazz Prisoners 6" class="pos-6"/>
+                </div>
+
+                <div class="slide-item">
+                    <img src="images/gallery/photo26.jpg" alt="Jazz Prisoners 7" class="pos-7"/>
+                </div>
+
+            </div>
+
+            <!-- КНОПКИ НАВИГАЦИИ -->
+            <button class="slider-btn prev" id="prevBtn">‹</button>
+            <button class="slider-btn next" id="nextBtn">›</button>
+
+            <!-- ТОЧКИ-ИНДИКАТОРЫ -->
+            <div class="slider-dots" id="sliderDots"></div>
+        </section>
+
+        <!-- ОТЗЫВ -->
+        <section id="review" class="quote-block">
+            <p>«О релизе "Meditation". Прекрасная аранжировка и отличная концепция! Очень нравится как линии бэкграунда
+                вплетаются в общую фактуру. Жюль Масснэ был бы в полном восторге. Отличная работа!»</p>
+            <div class="quote-author">Скотт Фри (Профессор Berklee College of Music)</div>
+        </section>
+
+        <!-- СОСТАВ + ДИСКОГРАФИЯ -->
+        <section id="members" class="two-columns">
+            <div class="column">
+                <h3>СОСТАВ</h3>
+                <p>Антон Петрищевский — лидер, композитор, аранжировщик, саксофоны</p>
+                <p>Кира Петрищевская — флейта</p>
+                <p>Герман Аветисов — труба</p>
+                <p>Артем Третьяков — фортепиано</p>
+                <p>Елизавета Владимирова — контрабас</p>
+                <p>Антон Антонов — ударные</p>
+            </div>
+            <div class="column" id="discography">
+                <h3>ДИСКОГРАФИЯ</h3>
+                <p>2025 — Meditation (single)</p>
+                <p>2013 — I Miss You</p>
+            </div>
+        </section>
+
+        <!-- КОНТАКТЫ -->
+        <section id="contacts" class="contacts-section">
+            <h3>Контакты</h3>
+            <p>По всем вопросам: <a href="mailto:antpet12@inbox.ru">antpet12@inbox.ru</a></p>
+            <span class="phone-number-text">+7 (916) 555-82-27</span>
+        </section>
+
+    </div>
+</main>
+
+<!-- ==============================
+ФУТЕР
+============================== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <span>© 2026 Jazz Prisoners</span>
+            <div class="social-links">
+                <a href="https://rutube.ru/channel/46012855/" target="_blank" rel="noopener noreferrer">RuTube</a>
+                <a href="https://t.me/jazzprisoners" target="_blank" rel="noopener noreferrer">Telegram</a>
+                <a href="https://instagram.com/jazzprisoners" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://youtube.com/@TheJazzPrisoners" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href="https://vk.ru/club122298866" target="_blank" rel="noopener noreferrer">VK</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/jp.js"></script>
+</body>
+</html>

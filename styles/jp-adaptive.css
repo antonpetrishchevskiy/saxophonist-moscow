@@ -1,0 +1,133 @@
+
+@media (max-width: 992px) {
+    .main-nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+@media (max-width: 768px) {
+    .header {
+        padding: 12px 20px;
+    }
+
+    .logo-img {
+        height: 30px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .container {
+        padding: 0 25px;
+    }
+
+    main {
+        padding: 80px 0 40px 0;
+    }
+
+    .page-title {
+        font-size: 42px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .quote-block {
+        padding: 30px 20px;
+        border-left: none;
+        border-top: 2px solid #1a1a1a;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .quote-block p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .two-columns {
+        flex-direction: column;
+        gap: 40px;
+        padding-top: 35px;
+        text-align: center;
+    }
+
+    .column {
+        text-align: center;
+    }
+
+    .column p {
+        font-size: 15px;
+    }
+
+    .contacts-section {
+        text-align: center;
+    }
+
+    .overlay-nav ul li a {
+        font-size: 28px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 15px;
+    }
+
+    .logo-img {
+        height: 25px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    main {
+        padding: 70px 0 30px 0;
+    }
+
+    .page-title {
+        font-size: 32px;
+    }
+
+    .content-text p {
+        font-size: 15px;
+    }
+
+    .quote-block {
+        padding-left: 15px;
+    }
+
+    .quote-block p {
+        font-size: 16px;
+    }
+
+    .two-columns {
+        gap: 30px;
+        padding-top: 25px;
+    }
+
+    .column p {
+        font-size: 14px;
+    }
+
+    .overlay-nav ul li a {
+        font-size: 24px;
+    }
+
+    .overlay-nav ul {
+        gap: 18px;
+    }
+}

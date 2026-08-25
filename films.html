@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Группа Фильмы</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Группа Фильмы | Кавер-бэнд | Саундтреки</title>
+    <link rel="stylesheet" href="styles/films.css">
+
+    <!-- Подключение шрифтов -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="container header-container">
+        <a href="#" class="logo">🎬 ГРУППА ФИЛЬМЫ</a>
+        <a href="index.html" class="back-home">← На главную</a>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero-films">
+    <div class="hero-bg">
+        <img src="images/films_3.png" alt="Группа Фильмы фон">
+        <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-content">
+        <h1 class="hero-title">🎬 ГРУППА ФИЛЬМЫ</h1>
+        <p class="hero-subtitle">Кавер-бэнд | Саундтреки | Живой звук</p>
+        <p class="hero-text">
+            Лучшие мелодии из кинофильмов, сериалов и видеоигр в живом исполнении.<br>
+            Создаём атмосферу настоящего кино на вашем мероприятии
+        </p>
+        <button class="order-btn" onclick="openOrderModal()">Заказать выступление →</button>
+    </div>
+</section>
+
+<!-- О нас -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">🎞️ <span>О нас</span></h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon">🎻</div>
+                <h3>Живой звук</h3>
+                <p>Полный состав музыкантов: вокал, саксофон, фортепиано, гитара, бас, ударные</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🎬</div>
+                <h3>Саундтреки</h3>
+                <p>Хиты из Гарри Поттера, Интерстеллара, Игры престолов, Титаника, Ла-Ла Ленд</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">⭐</div>
+                <h3>10 лет на сцене</h3>
+                <p>Более 250 выступлений: свадьбы, корпоративы, киновечера, частные мероприятия</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Фотогалерея -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">📸 <span>Фотогалерея</span></h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/filmy.jpg" alt="Группа Фильмы">
+                <div class="gallery-overlay">
+                    <p>Выступление на кинофестивале</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/films_6.webp" alt="Группа Фильмы">
+                <div class="gallery-overlay">
+                    <p>Корпоратив</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/films_4.webp" alt="Выступление">
+                <div class="gallery-overlay">
+                    <p>Свадебное выступление</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/films_5.webp" alt="Оркестр">
+                <div class="gallery-overlay">
+                    <p>Корпоратив</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Видео -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">🎥 <span>Видео</span></h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe width="320" height="180"
+                            src="https://rutube.ru/play/embed/4f907a181d7dca469528795186b95063/?skinColor=FFB300"
+                            style="border: none;" allow="clipboard-write; autoplay" allowFullScreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>Фильмы - Band</h4>
+                    <p>Промо</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe width="320" height="180"
+                            src="https://rutube.ru/play/embed/53ab6e1d4e0c8bd680724b01b2316e45/?skinColor=FFB300"
+                            style="border: none;" allow="clipboard-write; autoplay" allowFullScreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>Корпоратив</h4>
+                    <p>Корпоратив для компании Grand Line</p>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe width="320" height="180"
+                            src="https://rutube.ru/play/embed/5d58161c01aba5a5ecc13611cf2f4525/?skinColor=FFB300"
+                            style="border: none;" allow="clipboard-write; autoplay" allowFullScreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h4>гр. Фильмы</h4>
+                    <p>Ghostbusters</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Плейлист -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">🎵 <span>Кавер-версии в нашем исполнении</span></h2>
+        <div class="playlist">
+            <div class="track-list">
+                <div class="track-item" data-audio="audio/bee_gees.mp3">
+                    <div class="track-name">
+                        <span class="track-number">01</span>
+                        <div class="track-info">
+                            <span class="track-title">Stayin' Alive</span>
+                            <span class="track-artist">Bee Gees</span>
+                            <span class="track-from">(Saturday Night Fever)</span>
+                        </div>
+                    </div>
+                    <span class="track-duration">0:00</span>
+                </div>
+                <div class="track-item" data-audio="audio/dirty_dances.mp3">
+                    <div class="track-name">
+                        <span class="track-number">02</span>
+                        <div class="track-info">
+                            <span class="track-title">(I've Had) The Time of My Life</span>
+                            <span class="track-artist">Bill Medley & Jennifer Warnes</span>
+                            <span class="track-from">(The Dirty Dancing)</span>
+                        </div>
+                    </div>
+                    <span class="track-duration">0:00</span>
+                </div>
+                <div class="track-item" data-audio="audio/pink.mp3">
+                    <div class="track-name">
+                        <span class="track-number">03</span>
+                        <div class="track-info">
+                            <span class="track-title">Just Like Fire</span>
+                            <span class="track-artist">Pink</span>
+                            <span class="track-from">(Alice Through the Looking Glass)</span>
+                        </div>
+                    </div>
+                    <span class="track-duration">0:00</span>
+                </div>
+                <div class="track-item" data-audio="audio/timberlake.mp3">
+                    <div class="track-name">
+                        <span class="track-number">04</span>
+                        <div class="track-info">
+                            <span class="track-title">Can't Stop the Feeling!</span>
+                            <span class="track-artist">Justin Timberlake</span>
+                            <span class="track-from">(Trolls)</span>
+                        </div>
+                    </div>
+                    <span class="track-duration">0:00</span>
+                </div>
+                <div class="track-item" data-audio="audio/ghostbusters.mp3">
+                    <div class="track-name">
+                        <span class="track-number">05</span>
+                        <div class="track-info">
+                            <span class="track-title">Ghostbusters</span>
+                            <span class="track-artist">Ray Parker Jr.</span>
+                            <span class="track-from">(Ghostbusters)</span>
+                        </div>
+                    </div>
+                    <span class="track-duration">0:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Скрытый аудио-элемент -->
+<audio id="audioPlayer" style="display: none;"></audio>
+<!-- Цены -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">💰 <span>Стоимость</span></h2>
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>Стандарт</h3>
+                <div class="price"> от 120 000 ₽<span>/сет</span></div>
+                <ul class="price-features">
+                    <li>45 минут выступления</li>
+                    <li>Квартет (4 музыканта)</li>
+                    <li>8-10 саундтреков</li>
+                    <li>Звукорежиссёр</li>
+                </ul>
+                <button class="order-btn" onclick="openOrderModal()">Выбрать</button>
+            </div>
+            <div class="price-card popular">
+                <div class="popular-badge">Популярный</div>
+                <h3>Киновечер</h3>
+                <div class="price">от 150 000 ₽<span>/вечер</span></div>
+                <ul class="price-features">
+                    <li>90 минут выступления</li>
+                    <li>Квинтет (5 музыкантов)</li>
+                    <li>15-18 саундтреков</li>
+                    <li>Свет</li>
+                    <li>Видеопроекция</li>
+                </ul>
+                <button class="order-btn" onclick="openOrderModal()">Выбрать</button>
+            </div>
+            <div class="price-card">
+                <h3>Премиум</h3>
+                <div class="price">от 250 000 ₽<span>/вечер</span></div>
+                <ul class="price-features">
+                    <li>До 2 часов выступления</li>
+                    <li>Полный живой состав (8 чел)</li>
+                    <li>Индивидуальный репертуар</li>
+                    <li>Выезд по Москве и области</li>
+                    <li>Звукорежиссер</li>
+                    <li>Свет</li>
+                </ul>
+                <button class="order-btn" onclick="openOrderModal()">Выбрать</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Контакты -->
+<section class="section contacts-section">
+    <div class="container">
+        <h2 class="section-title">📞 <span>Связь с нами</span></h2>
+        <div class="contacts-grid">
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <h4>Телефон</h4>
+                <a href="tel:+79165558227">+7 (916) 555-82-27</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <h4>WhatsApp</h4>
+                <a href="https://wa.me/79165558227">Написать в WhatsApp</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-telegram"></i>
+                <h4>Telegram</h4>
+                <a href="https://t.me/jazzprisoners">@jazzprisoners</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <h4>Email</h4>
+                <a href="mailto:antpet12@inbox.ru">antpet12@inbox.ru</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 Группа Фильмы | Кавер-бэнд | Музыка из кино</p>
+    </div>
+</footer>
+
+<!-- Модалка заказа -->
+<div id="orderModal" class="order-modal">
+    <div class="order-modal-content">
+        <div class="order-modal-header">
+            <h3>🎬 Заказать выступление</h3>
+            <span class="order-modal-close">&times;</span>
+        </div>
+        <form id="orderForm">
+            <input type="text" id="userName" placeholder="Ваше имя" required>
+            <input type="email" id="userEmail" placeholder="Ваш email" required>
+            <input type="tel" id="userPhone" placeholder="Ваш телефон">
+            <textarea id="orderMessage" placeholder="Дата, место, формат мероприятия, ваши пожелания" rows="4"
+                      required></textarea>
+            <button type="submit" class="order-btn" style="width: 100%;">Отправить заявку</button>
+        </form>
+    </div>
+</div>
+
+<button id="backToTop" class="back-to-top">↑</button>
+
+<script src="js/films.js"></script>
+
+</body>
+</html>
+
+</body>
+</html>

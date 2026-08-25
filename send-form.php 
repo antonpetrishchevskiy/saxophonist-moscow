@@ -1,0 +1,35 @@
+<?php
+// Простейший обработчик формы
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    // Получаем данные
+    $name = $_POST['name'] ?? '';
+    $phone = $_POST['phone'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $event = $_POST['event'] ?? '';
+    $message = $_POST['message'] ?? '';
+
+    // Формируем письмо
+    $to = "ваш-antpet12@inbox.ru"; // ← ИЗМЕНИТЕ ЭТО!
+    $subject = "Новая заявка с сайта";
+
+    $text = "Имя: $name\n";
+    $text .= "Телефон: $phone\n";
+    $text .= "Email: $email\n";
+    $text .= "Мероприятие: $event\n";
+    $text .= "Сообщение: $message\n";
+
+    // Отправляем
+    $headers = "From: website@your-site.com\r\n";
+    $headers .= "Reply-To: $email\r\n";
+
+    if (mail($to, $subject, $text, $headers)) {
+        echo json_encode(['success' => true]);
+    } else {
+        echo json_encode(['success' => false]);
+    }
+} else {
+    echo json_encode(['success' => false, 'message' => 'Invalid request']);
+}
+?>
