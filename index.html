@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<header class="header animate__animated animate__fadeIn animate__slower 6s">
+<header class="header animate__animated animate__fadeIn animate__slower 12s">
     <div class="container header-container">
         <!-- Основная навигация -->
         <nav class="main-nav">
@@ -115,7 +115,6 @@
 
 <main>
     <section class="hero">
-
         <!-- Основной контент в контейнере -->
         <div class="container">
             <!-- Контент -->
@@ -199,7 +198,6 @@
                     </div>
 
                 </div>
-
             </div>
         </div>
     </section>
@@ -489,8 +487,8 @@
                     <h3 class="disc-name">Meditation</h3>
                     <div class="disc-features">
                         <ul>
-                            <li>Антон Петрищевский — alto sax, arrangement</li>
                             <li>Кира Петрищевская — flute</li>
+                            <li>Антон Петрищевский — alto sax, arrangement</li>
                             <li>Герман Аветисов — trumpet</li>
                             <li>Артем Третьяков — piano</li>
                             <li>Антон Нетесов — bass</li>
@@ -520,7 +518,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Альбом 2: справа -->
             <div class="disc-card disc-card-right">
                 <div class="disc-info-side">
@@ -702,6 +699,40 @@
 
                     <div class="concert-card">
                         <div class="concert-date">
+                            <div class="date-day">12</div>
+                            <div class="date-month">Ноября</div>
+                            <div class="date-year">2026</div>
+                        </div>
+
+                        <div class="concert-info">
+                            <h3 class="concert-title">The Jazz Prisoners</h3>
+                            <div class="concert-details">
+                                <span class="concert-location">ул. Пятницкая, д. 27, стр. 3А</span>
+                                <span class="concert-time">20:00</span>
+                            </div>
+                            <p class="concert-description">"Live In Esse"</p>
+                            <div class="concert-actions">
+                                <a href="https://book.essedon.ru/event/87"
+                                   class="btn-buy">Купить билет</a>
+                                <a href="https://www.jazzesse.ru/event/index/3808/9226"
+                                   class="btn-more">Подробнее</a>
+                            </div>
+                        </div>
+
+                        <div class="concert-image">
+                            <img src="images/concerts/Esse_JP_Mobile.webp" alt="The Jazz Prisoners">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Блок с прошедшими концертами (скрыт по умолчанию) -->
+            <div class="concerts-content hidden" id="pastTab">
+                <div class="concert-cards">
+                    <!-- Прошедший концерт 1 -->
+
+                    <div class="concert-card past">
+                        <div class="concert-date">
                             <div class="date-day">25</div>
                             <div class="date-month">Сентября</div>
                             <div class="date-year">2026</div>
@@ -716,23 +747,14 @@
                             <p class="concert-description">Программа "Old Money"</p>
                             <div class="concert-actions">
                                 <a href="https://jamclub.ticketscloud.org/e/69e1cc99cf210c12ddad44d0?partner_id=645e37ade4ff99f7697cb810"
-                                   class="btn-buy">Купить билет</a>
-                                <a href="https://jamclub.ticketscloud.org/e/69e1cc99cf210c12ddad44d0?partner_id=645e37ade4ff99f7697cb810"
                                    class="btn-more">Подробнее</a>
                             </div>
                         </div>
 
                         <div class="concert-image">
-                            <img src="images/Group%202%20(1)%20copy.png" alt="Diana Dank">
+                            <img src="images/diana_dank_old_money.jpg" alt="Diana Dank">
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Блок с прошедшими концертами (скрыт по умолчанию) -->
-            <div class="concerts-content hidden" id="pastTab">
-                <div class="concert-cards">
-                    <!-- Прошедший концерт 1 -->
 
                     <div class="concert-card past">
                         <div class="concert-date">
@@ -1032,7 +1054,6 @@
     <!-- Добавьте остальные иконки по аналогии -->
 </svg>
 
-
 <!-- Кнопка возврата наверх -->
 <button id="backToTop" class="back-to-top" aria-label="Наверх">
     <svg class="arrow-up-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -1041,7 +1062,6 @@
               stroke-linejoin="round"/>
     </svg>
 </button>
-
 
 <!-- Модальное окно для заказа выступления -->
 <div id="orderModal" class="order-modal">
@@ -1083,105 +1103,6 @@
         </form>
     </div>
 </div>
-
-
-<!-- СКРИПТ МАСКИ ТЕЛЕФОНА - ВСТАВИТЬ ЗДЕСЬ -->
-<script>
-    var phoneInputs = document.querySelectorAll('input[data-tel-input]');
-
-    var getInputNumbersValue = function (input) {
-        return input.value.replace(/\D/g, '');
-    }
-
-    var onPhonePaste = function (e) {
-        var input = e.target,
-            inputNumbersValue = getInputNumbersValue(input);
-        var pasted = e.clipboardData || window.clipboardData;
-        if (pasted) {
-            var pastedText = pasted.getData('Text');
-            if (/\D/g.test(pastedText)) {
-                input.value = inputNumbersValue;
-                return;
-            }
-        }
-    }
-
-    var onPhoneInput = function (e) {
-        var input = e.target,
-            inputNumbersValue = getInputNumbersValue(input),
-            selectionStart = input.selectionStart,
-            formattedInputValue = "";
-
-        if (!inputNumbersValue) {
-            return input.value = "";
-        }
-
-        if (input.value.length != selectionStart) {
-            if (e.data && /\D/g.test(e.data)) {
-                input.value = inputNumbersValue;
-            }
-            return;
-        }
-
-        if (["7", "8", "9"].indexOf(inputNumbersValue[0]) > -1) {
-            if (inputNumbersValue[0] == "9") inputNumbersValue = "7" + inputNumbersValue;
-            var firstSymbols = (inputNumbersValue[0] == "8") ? "8" : "+7";
-            formattedInputValue = input.value = firstSymbols + " ";
-            if (inputNumbersValue.length > 1) {
-                formattedInputValue += '(' + inputNumbersValue.substring(1, 4);
-            }
-            if (inputNumbersValue.length >= 5) {
-                formattedInputValue += ') ' + inputNumbersValue.substring(4, 7);
-            }
-            if (inputNumbersValue.length >= 8) {
-                formattedInputValue += '-' + inputNumbersValue.substring(7, 9);
-            }
-            if (inputNumbersValue.length >= 10) {
-                formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
-            }
-        } else {
-            formattedInputValue = '+' + inputNumbersValue.substring(0, 16);
-        }
-        input.value = formattedInputValue;
-    }
-
-    var onPhoneKeyDown = function (e) {
-        var inputValue = e.target.value.replace(/\D/g, '');
-        if (e.keyCode == 8 && inputValue.length == 1) {
-            e.target.value = "";
-        }
-    }
-
-    for (var phoneInput of phoneInputs) {
-        phoneInput.addEventListener('keydown', onPhoneKeyDown);
-        phoneInput.addEventListener('input', onPhoneInput, false);
-        phoneInput.addEventListener('paste', onPhonePaste, false);
-    }
-</script>
-
-<script>
-    // Кнопка возврата наверх
-    const backToTopButton = document.getElementById('backToTop');
-
-    // Показываем/скрываем кнопку при скролле
-    window.addEventListener('scroll', function () {
-        if (window.pageYOffset > 300) {  // Показываем после 300px скролла
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
-    });
-
-    // Плавный возврат наверх при клике
-    backToTopButton.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'  // Плавная прокрутка
-        });
-    });
-</script>
-
 
 <script src="js/wow.min.js"></script>
 <script src="js/jquery-3.7.1.min.js"></script>

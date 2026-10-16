@@ -580,15 +580,14 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    height: 15px; /* Уменьшаем высоту */
+    height: 15px;
     background: transparent;
     z-index: 999;
-    pointer-events: none; /* По умолчанию не перехватывает события */
+    pointer-events: none;
 }
 
-/* Мост активируется только когда меню уже открыто */
 .dropdown:hover::after {
-    pointer-events: auto; /* Включаем перехват только при открытом меню */
+    pointer-events: auto;
 }
 
 /* Основное меню */
@@ -754,7 +753,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Плавное увеличение описания при наведении */
 .dropdown-item:hover .project-desc {
     transform: scale(1.02);
 }
@@ -774,30 +772,27 @@ body {
     );
 }
 
-/* Hero секция */
 .hero {
-    position: relative; /* Для позиционирования overlay */
+    position: relative;
     display: flex;
     align-items: center;
-    min-height: 100vh;           /* На всю высоту экрана */
+    min-height: 100vh;
     width: 100%;
     overflow: hidden;
     background-image: url("../images/main_background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 60% 35%;
-
 }
-
 
 /* Контент поверх фона */
 .hero-content-wrapper {
     position: relative;
-    z-index: 2;                  /* Поверх overlay */
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 80px); /* Высота минус хедер */
+    min-height: calc(100vh - 80px);
     padding: 40px 0;
 }
 
@@ -843,37 +838,6 @@ body {
     }
 }
 
-/*!* Для мобильных устройств — чуть меньше амплитуда *!
-@media (max-width: 768px) {
-    .content-card {
-        padding: 30px 20px;
-        animation: floatMobile 4s ease-in-out infinite;
-    }
-
-    @keyframes floatMobile {
-        0%, 100% {
-            transform: translateY(0px);
-        }
-        50% {
-            transform: translateY(-8px);
-        }
-    }
-}*/
-
-/* Анимация появления */
-/*
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-*/
-
 /* Заголовок и текст */
 .main-title {
     display: flex;
@@ -890,22 +854,12 @@ body {
     text-transform: uppercase;
 }
 
-
-/* Опционально: добавляем промежуточный уровень для большей иерархии */
-/*.title-sub {
-    font-size: 1.5rem;
-    font-weight: 500; !* Medium *!
-    color: rgba(255, 255, 255, 0.9);
-    font-family: GilroyMedium, sans-serif;
-    letter-spacing: 0.03em;
-}*/
-/* Теги (Саксофонист • Композитор • Преподаватель) */
 .hero-tags {
     font-size: 1.2rem;
     color: #f1c475;
     font-weight: 500;
     letter-spacing: 1px;
-    margin-bottom: 10px; /* ← gap после этой строки */
+    margin-bottom: 10px;
 }
 
 /* Основной текст */
@@ -919,7 +873,7 @@ body {
 
 .hologram-button {
     background: transparent;
-    border: 1px solid #edf3f3; /* Cyan border for the futuristic look */
+    border: 1px solid #edf3f3;
     border-radius: 16px;
     font-family: "GilroyRegular", sans-serif;
     font-size: 16px;
@@ -931,7 +885,6 @@ body {
     position: relative;
     overflow: hidden;
     transition: all 0.6s ease;
-    /* Initial glow effect */
     box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgba(147, 145, 142, 0.29);
     text-shadow: 0 0 5px rgba(214, 154, 40, 0.93);
     width: 100%;
@@ -940,13 +893,10 @@ body {
 }
 
 .hologram-button:hover {
-    /* Enhanced glow on hover */
     box-shadow: 0 0 10px rgb(247, 248, 248), 0 0 20px rgb(255, 255, 255), 0 0 30px rgba(214, 154, 40, 0.93);
-   /* text-shadow: 0 0 10px rgb(255, 255, 255);*/
-    transform: scale(1.05); /* Slight lift to add depth */
+    transform: scale(1.05);
 }
 
-/* Adding a pseudo-element for a moving "scan line" or glare effect */
 .hologram-button::before {
     content: '';
     position: absolute;
@@ -954,7 +904,6 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    /* A gradient that simulates a light sweep */
     background: linear-gradient(90deg, transparent, rgb(241, 196, 117), transparent);
     transition: all 0.5s ease;
 }
@@ -964,7 +913,6 @@ body {
     transition: all 0.5s ease;
 }
 
-/* Optional: Add a subtle animation to the button to make it look "alive" */
 @keyframes pulse {
     0% {
         box-shadow: 0 0 10px rgb(255, 255, 255);
@@ -980,7 +928,6 @@ body {
 .hologram-button {
     animation: pulse 2s infinite alternate;
 }
-/* Мобильное меню */
 .menu-toggle {
     display: none;
     color: #F5F5F5;
@@ -988,7 +935,6 @@ body {
     cursor: pointer;
 }
 
-/* Модальное окно */
 .order-modal {
     display: none;
     position: fixed;
@@ -1010,30 +956,17 @@ body {
 .order-modal-content {
     background: rgba(195, 195, 195, 0.11);
     position: relative;
-
     margin: 10% auto;
-  /*  padding: 0;*/
     width: 90%;
     max-width: 500px;
-   /* border-radius: 20px;*/
-   /* border: 1px solid rgba(255, 215, 0, 0.3);*/
- /*   box-shadow: 0 0 40px rgba(255, 215, 0, 0.2);*/
     animation: slideUp 0.4s ease;
-
-
-   /* backdrop-filter: blur(20px);*/
     border: 1px solid rgba(201, 169, 110, 0.59);
     border-radius: 24px;
     padding: 3rem 2.5rem;
-  /*  max-width: 440px;*/
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-   /* animation: fadeInUp 0.8s ease-out;*/
-  /*  align-items: center;
-    text-align: center;*/
-
 }
 
 @keyframes slideUp {
@@ -2653,6 +2586,7 @@ body {
 /* Изображение концерта (без изменений) */
 .concert-image {
     height: 180px;
+    width:  175px;
     overflow: hidden;
     border-radius: 12px;
     background: #1a1a1a;
